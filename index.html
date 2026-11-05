@@ -1,32 +1,101 @@
+
 <!DOCTYPE html>
 <html lang="pt-AO">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mestre Nelo e Ajudantes</title>
-<meta name="theme-color" content="#0f172a">
+<meta name="theme-color" content="#071426">
+<title>NELO AI - Assistência Automóvel</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui}
-body{background:#0f172a;min-height:100vh;color:white}
-.top{padding:14px 20px;display:flex;justify-content:space-between;color:#94a3b8;font-size:13px;border-bottom:1px solid #1e293b}
-.card{margin:22px auto;max-width:420px;background:#1e293b;border-radius:22px;padding:28px;text-align:center}
-.icon{font-size:50px;margin-bottom:10px}
-h1{font-size:32px;line-height:1.1;margin:10px 0}
-.sub{color:#94a3b8;font-size:14px;margin:14px 0 22px}
-.btn-wa{background:#22c55e;color:white;display:flex;align-items:center;justify-content:center;gap:8px;padding:16px;border-radius:14px;text-decoration:none;font-weight:800;font-size:18px}
-.btn-call{border:2px solid #334155;color:white;display:flex;justify-content:center;padding:14px;border-radius:14px;text-decoration:none;margin-top:12px}
-.foot{display:flex;gap:10px;justify-content:center;font-size:11px;color:#94a3b8;margin:20px 0;flex-wrap:wrap}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#071426;color:white;padding:20px}
+header{text-align:center;padding:25px 10px}
+.logo{font-size:48px}
+h1{color:#42c5ff;font-size:32px}
+.sub{color:#aab9cc;margin-top:8px}
+.card{background:#11243a;padding:20px;border-radius:16px;margin:15px auto;max-width:500px}
+h2{color:#42c5ff;margin-bottom:15px}
+.service{padding:12px;background:#1b3450;border-radius:10px;margin:8px 0}
+label{display:block;margin:12px 0 6px}
+input,select,textarea{width:100%;padding:13px;border:0;border-radius:8px;font-size:16px}
+button,.btn{display:block;width:100%;padding:14px;border:0;border-radius:9px;text-align:center;text-decoration:none;font-size:16px;font-weight:bold;margin-top:12px;cursor:pointer}
+.primary{background:#168bd0;color:white}
+.whatsapp{background:#20bd68;color:white}
+footer{text-align:center;color:#91a2b8;padding:25px;font-size:13px}
 </style>
 </head>
 <body>
-<div class="top"><span>📍 Luanda, Angola</span><span>09:41 🔒 PWA</span></div>
-<div class="card">
-<div class="icon">🔧</div>
-<h1>Mestre Nelo e<br>Ajudantes</h1>
-<p class="sub">SOS Auto 24h - Baterias, Pneus e Socorro</p>
-<a class="btn-wa" href="https://wa.me/244951142651?text=Olá%20Mestre%20Nelo!%20Preciso%20de%20socorro%20auto%20em%20Luanda">💬 CHAMAR 951142651</a>
-<a class="btn-call" href="tel:+244951142651">📞 Ligar: 951 142 651</a>
-</div>
-<div class="foot"><span>🛡️ Serviço 24h</span><span>• ✅ Suporte Imediato</span><span>• ⭐ Confiança em Luanda</span></div>
+<header>
+<div class="logo">🤖🔧</div>
+<h1>NELO AI</h1>
+<p class="sub">Inteligência que transforma oficinas.</p>
+<p class="sub">Assistência automóvel em Luanda</p>
+</header>
+
+<section class="card">
+<h2>Bem-vindo à NELO AI</h2>
+<p>O teu assistente de assistência automóvel.</p>
+<p class="sub">Escolhe um serviço para começar.</p>
+<div class="service">🔋 Diagnóstico de bateria</div>
+<div class="service">⚡ Electricidade auto</div>
+<div class="service">🔧 Alternador e motor de arranque</div>
+<div class="service">💡 Iluminação e fusíveis</div>
+<div class="service">🚗 Assistência automóvel</div>
+</section>
+
+<section class="card">
+<h2>Solicitar assistência</h2>
+<form id="pedido">
+<label>Nome completo</label>
+<input id="nome" required placeholder="O teu nome">
+
+<label>Telefone</label>
+<input id="telefone" required type="tel" placeholder="O teu contacto">
+
+<label>Marca e modelo do veículo</label>
+<input id="carro" required placeholder="Ex.: Toyota Corolla">
+
+<label>Serviço pretendido</label>
+<select id="servico">
+<option>Diagnóstico de bateria</option>
+<option>Electricidade auto</option>
+<option>Alternador</option>
+<option>Motor de arranque</option>
+<option>Iluminação e fusíveis</option>
+<option>Outro problema</option>
+</select>
+
+<label>Descreve o problema</label>
+<textarea id="problema" rows="3" placeholder="Conta-nos o que aconteceu"></textarea>
+
+<button class="whatsapp" type="submit">Enviar pedido pelo WhatsApp</button>
+</form>
+</section>
+
+<section class="card">
+<h2>Sobre a NELO AI</h2>
+<p>A NELO AI é uma solução digital em desenvolvimento para ajudar oficinas a atender clientes, receber pedidos e organizar serviços.</p>
+<a class="btn primary" href="https://wa.me/244951142651">Contactar Mestre Nelo</a>
+</section>
+
+<footer>
+<p>NELO AI © 2026</p>
+<p>Luanda - Angola</p>
+<p>Inteligência que transforma negócios.</p>
+</footer>
+
+<script>
+document.getElementById("pedido").addEventListener("submit",function(e){
+e.preventDefault();
+const nome=document.getElementById("nome").value;
+const telefone=document.getElementById("telefone").value;
+const carro=document.getElementById("carro").value;
+const servico=document.getElementById("servico").value;
+const problema=document.getElementById("problema").value;
+const mensagem="Olá! Quero solicitar assistência.\nNome: "+nome+"\nTelefone: "+telefone+"\nVeículo: "+carro+"\nServiço: "+servico+"\nProblema: "+problema;
+window.open("https://wa.me/244951142651?text="+encodeURIComponent(mensagem),"_blank");
+});
+</script>
 </body>
 </html>
+
